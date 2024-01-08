@@ -30,7 +30,7 @@ const Cart = struct {
 
     colors: [20]u16 = .{ 0x01, 0x11, 0x21, 0x31, 0x41, 0x02, 0x12, 0x22, 0x32, 0x42, 0x03, 0x13, 0x23, 0x33, 0x43, 0x04, 0x14, 0x24, 0x34, 0x44 },
 
-    squares: [256][2]u16 = [_][2]u16{.{ 0, 0 }} ** 256,
+    squares: [256][3]u16 = [_][3]u16{.{ 0, 0, 0 }} ** 256,
 
     fn start(c: *Cart) void {
         c.updatePalette();
@@ -69,6 +69,7 @@ const Cart = struct {
         for (&c.squares) |*s| {
             s[0] = c.randomColor();
             s[1] = c.randomColor();
+            s[2] = c.randomColor();
         }
     }
 
@@ -82,6 +83,8 @@ const Cart = struct {
             w4.rect(x * 10, y * 10, 10, 10);
             w4.color(s[1]);
             w4.rect(x * 10 + 2, y * 10 + 2, 6, 6);
+            w4.color(s[2]);
+            w4.rect(x * 10 + 4, y * 10 + 4, 2, 2);
         }
     }
 };
