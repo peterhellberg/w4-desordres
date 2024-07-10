@@ -1,7 +1,7 @@
 const std = @import("std");
 const w4 = @import("w4");
 
-var prng = std.rand.DefaultPrng.init(0);
+var prng = std.Random.DefaultPrng.init(0);
 const random = prng.random();
 
 const Cart = struct {
