@@ -10,6 +10,11 @@ File watcher can be started by calling:
 zig build spy
 ```
 
+Or by using reflex:
+```sh
+reflex -R .zig-cache zig build
+```
+
 Running the cart in WASM-4:
 ```sh
 zig build run
